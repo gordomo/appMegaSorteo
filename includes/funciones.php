@@ -389,7 +389,7 @@ function addGanador($mysqli, $file, $titulo, $subtitulo, $texto, $habilitado) {
                 $exito = $newThumb->saveImage($ruta_thumb);
 
                 // prepare and bind
-                if ($stmt = $mysqli->prepare("INSERT INTO ganadores (`titulo`, `subtitulo`, `texto`, `url`, `url_thumb`, `habilitado`) values (?, ?, ?, ?, ?)")) {
+                if ($stmt = $mysqli->prepare("INSERT INTO ganadores (`titulo`, `subtitulo`, `texto`, `url`, `url_thumb`, `habilitado`) values (?, ?, ?, ?, ?, ?)")) {
 
                     $stmt->bind_param("sssssi", $titulo, $subtitulo, $texto, $ruta, $ruta_thumb, $habilitado);
 
