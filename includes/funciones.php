@@ -190,6 +190,7 @@ function getNews($mysqli, $habilitadoGet = "no") {
     if ($habilitadoGet != "no") {
         $query .= " WHERE habilitado = ?";
     }
+    $query .= " order by id desc";
     if ($stmt = $mysqli->prepare($query)) {
         /* ligar parámetros para marcadores */
         if ($habilitadoGet != "no") {
